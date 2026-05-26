@@ -11,7 +11,7 @@
         {
           "location": {
             "x": 341.72876065552964,
-            "y": 680.10116746070719
+            "y": 688.52723874573007
           },
           "nodeIndex": "calendario",
           "nodeLineageTag": "2f9d2abe-7edb-43fe-9a93-4fe597c9ae03",
@@ -19,12 +19,12 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
             "x": 704.38305001469348,
-            "y": 317
+            "y": 325.42607128502289
           },
           "nodeIndex": "cotacoes",
           "nodeLineageTag": "8a5d0cc3-28b2-49a9-a614-aff9fa82f588",
@@ -32,25 +32,12 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 1136.3830500146937,
-            "y": 61
-          },
-          "nodeIndex": "data_final",
-          "nodeLineageTag": "a2a04938-16ad-41a7-9526-d3ef6c4c745a",
-          "size": {
-            "height": 104,
-            "width": 234
-          },
-          "zIndex": 0
+          "zIndex": 2
         },
         {
           "location": {
             "x": 341.20156119318506,
-            "y": 16.852142570045828
+            "y": 25.278213855068714
           },
           "nodeIndex": "moedas",
           "nodeLineageTag": "709604bf-461b-47a3-ae5a-38b09ff966e8",
@@ -58,12 +45,12 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 3
         },
         {
           "location": {
             "x": 338,
-            "y": 304
+            "y": 312.42607128502289
           },
           "nodeIndex": "transacoes",
           "nodeLineageTag": "343a5492-05e4-478e-956e-4093ca82ea00",
@@ -71,7 +58,20 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1023.2869210729905,
+            "y": 17.367623009025465
+          },
+          "nodeIndex": "_medidas",
+          "nodeLineageTag": "1ea39774-76fc-45a8-93ea-4f71dcd2972d",
+          "size": {
+            "height": 162.46374249642793,
+            "width": 234
+          },
+          "zIndex": 5
         }
       ],
       "name": "Todas as tabelas",

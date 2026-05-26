@@ -6,6 +6,11 @@ table _medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Cotacao do dia' = AVERAGE(cotacoes[Cotacao])
+		lineageTag: a6f0d20d-3a12-4fe4-beaf-b216a8ae7b7a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column 'Coluna 1'
 		dataType: string
 		lineageTag: cf82e77f-0e0f-47ef-a635-9cf925195013
