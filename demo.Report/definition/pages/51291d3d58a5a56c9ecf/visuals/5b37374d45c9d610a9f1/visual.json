@@ -4,9 +4,10 @@
   "position": {
     "x": 992.11310072195522,
     "y": 277.18789259451586,
-    "z": 3,
+    "z": 3000,
     "height": 183.8771168696293,
-    "width": 288.16563091509073
+    "width": 288.16563091509073,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -22,11 +23,11 @@
                       "Entity": "_medidas"
                     }
                   },
-                  "Property": "Cotacao do dia"
+                  "Property": "Cotação do Dia"
                 }
               },
               "queryRef": "_medidas.Cotacao do dia",
-              "nativeQueryRef": "Cotacao do dia"
+              "nativeQueryRef": "Cotação do Dia"
             }
           ]
         }
@@ -41,7 +42,7 @@
                     "Entity": "_medidas"
                   }
                 },
-                "Property": "Cotacao do dia"
+                "Property": "Cotação do Dia"
               }
             },
             "direction": "Descending"
@@ -51,23 +52,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "fbadb0dd149e8d472586",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_medidas"
-              }
-            },
-            "Property": "Cotacao do dia"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -4,9 +4,10 @@
   "position": {
     "x": 992.11310072195522,
     "y": 39.794301412083954,
-    "z": 2,
+    "z": 2000,
     "height": 237.39359118243189,
-    "width": 288.16563091509073
+    "width": 288.16563091509073,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -22,11 +23,11 @@
                       "Entity": "_medidas"
                     }
                   },
-                  "Property": "ValorTotal"
+                  "Property": "Valor Total"
                 }
               },
               "queryRef": "_medidas.ValorTotal",
-              "nativeQueryRef": "ValorTotal"
+              "nativeQueryRef": "Valor Total"
             }
           ]
         }
@@ -41,7 +42,7 @@
                     "Entity": "_medidas"
                   }
                 },
-                "Property": "ValorTotal"
+                "Property": "Valor Total"
               }
             },
             "direction": "Descending"
@@ -51,23 +52,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "bb7bdc239a543e3ff8bc",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_medidas"
-              }
-            },
-            "Property": "ValorTotal"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

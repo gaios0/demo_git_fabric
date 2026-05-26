@@ -4,13 +4,13 @@
   "position": {
     "x": 0,
     "y": 0,
-    "z": 1,
+    "z": 1000,
     "height": 720.41407728772685,
-    "width": 214.06589725121026,
-    "tabOrder": 1
+    "width": 229.16028744200071,
+    "tabOrder": 1000
   },
   "visual": {
-    "visualType": "advancedSlicerVisual",
+    "visualType": "listSlicer",
     "query": {
       "queryState": {
         "Values": {
@@ -27,102 +27,14 @@
                 }
               },
               "queryRef": "cotacoes.Moeda",
-              "nativeQueryRef": "Moeda"
+              "nativeQueryRef": "Moeda",
+              "active": true
             }
           ]
         }
       }
     },
     "objects": {
-      "selection": [
-        {
-          "properties": {
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "selectAllCheckboxEnabled": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "shapeCustomRectangle": [
-        {
-          "properties": {
-            "tileShape": {
-              "expr": {
-                "Literal": {
-                  "Value": "'rectangleRoundedByPixel'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        }
-      ],
-      "layout": [
-        {
-          "properties": {
-            "style": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Cards'"
-                }
-              }
-            },
-            "orientation": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "maxTiles": {
-              "expr": {
-                "Literal": {
-                  "Value": "12L"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "overFlow": [
-        {
-          "properties": {
-            "overFlowDirection": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "selectionIcon": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
       "general": [
         {
           "properties": {
@@ -156,7 +68,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'USD'"
+                                "Value": "'AUD'"
                               }
                             }
                           ]
@@ -176,7 +88,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "94192ae9ee40b03d3235",
+        "name": "41531bb3824c1646fed4",
         "field": {
           "Column": {
             "Expression": {

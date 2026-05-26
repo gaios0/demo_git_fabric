@@ -1,13 +1,48 @@
 table _medidas
 	lineageTag: 1ea39774-76fc-45a8-93ea-4f71dcd2972d
 
-	measure ValorTotal = SUM(transacoes[Total])
+	measure 'Valor Total' = SUM(transacoes[Total])
 		lineageTag: 75c306fb-0524-4f97-a17a-88c8e11b21ad
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Cotacao do dia' = AVERAGE(cotacoes[Cotacao])
+	measure 'Cotação do Dia' = AVERAGE(cotacoes[Cotacao])
 		lineageTag: a6f0d20d-3a12-4fe4-beaf-b216a8ae7b7a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cotação corrigida' = ```
+			
+			
+			VAR __DataCtx = MAX(calendario[Data]) 
+			
+			VAR __UltimaDataComCotacao = 
+			    CALCULATE(
+			        LASTNONBLANK(calendario[Data], [Cotação do Dia]),
+			        calendario[Data] <= __DataCtx
+			    )
+			
+			RETURN
+			    CALCULATE(
+			        [Cotação do Dia],
+			        calendario[Data] = __UltimaDataComCotacao
+			    )
+			```
+		lineageTag: 5cbfba7a-f4be-4083-bbf7-c7001bf947ba
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total R$' = ```
+			
+			SUMX(
+			    moedas,
+			    SUMX(
+			        calendario,
+			        COALESCE([Cotação corrigida], 1) * [Valor Total] 
+			    )
+			) 
+			```
+		lineageTag: e3bac304-4028-4525-b752-8793f9fab811
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 

@@ -10,111 +10,80 @@
     "tabOrder": 0
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Category": {
+        "Values": {
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "calendario"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Data"
-                        }
-                      },
-                      "Hierarchy": "Hierarquia de datas"
+                    "SourceRef": {
+                      "Entity": "calendario"
                     }
                   },
-                  "Level": "Ano"
+                  "Property": "Data"
                 }
               },
-              "queryRef": "calendario.Data.Variation.Hierarquia de datas.Ano",
-              "nativeQueryRef": "Data Ano",
-              "active": true
+              "queryRef": "calendario.Data",
+              "nativeQueryRef": "Data"
             },
             {
               "field": {
-                "HierarchyLevel": {
+                "Measure": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "calendario"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Data"
-                        }
-                      },
-                      "Hierarchy": "Hierarquia de datas"
+                    "SourceRef": {
+                      "Entity": "_medidas"
                     }
                   },
-                  "Level": "Mês"
+                  "Property": "Valor Total"
                 }
               },
-              "queryRef": "calendario.Data.Variation.Hierarquia de datas.Mês",
-              "nativeQueryRef": "Data Mês",
-              "active": true
+              "queryRef": "_medidas.ValorTotal",
+              "nativeQueryRef": "Valor Total"
             },
             {
               "field": {
-                "HierarchyLevel": {
+                "Measure": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "calendario"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "Data"
-                        }
-                      },
-                      "Hierarchy": "Hierarquia de datas"
+                    "SourceRef": {
+                      "Entity": "_medidas"
                     }
                   },
-                  "Level": "Dia"
+                  "Property": "Cotação do Dia"
                 }
               },
-              "queryRef": "calendario.Data.Variation.Hierarquia de datas.Dia",
-              "nativeQueryRef": "Data Dia",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
+              "queryRef": "_medidas.Cotacao do dia",
+              "nativeQueryRef": "Cotação do Dia"
+            },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "cotacoes"
-                        }
-                      },
-                      "Property": "Cotacao"
+                    "SourceRef": {
+                      "Entity": "_medidas"
                     }
                   },
-                  "Function": 1
+                  "Property": "Cotação corrigida"
                 }
               },
-              "queryRef": "Avg(cotacoes.Cotacao)",
-              "nativeQueryRef": "Média de Cotacao"
+              "queryRef": "_medidas.Cotação corrigida",
+              "nativeQueryRef": "Cotação corrigida"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_medidas"
+                    }
+                  },
+                  "Property": "Total R$"
+                }
+              },
+              "queryRef": "_medidas.Total R$",
+              "nativeQueryRef": "Total R$"
             }
           ]
         }
@@ -125,98 +94,74 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "fcabe0991fc9a54dfd7e",
+        "name": "bbb1e6c9f76ea46d19a9",
         "field": {
-          "Aggregation": {
+          "Measure": {
             "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "cotacoes"
-                  }
-                },
-                "Property": "Cotacao"
+              "SourceRef": {
+                "Entity": "_medidas"
               }
             },
-            "Function": 1
+            "Property": "Valor Total"
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "cae9f7275d2b0ff2f7c1",
+        "name": "a34b54d34da603838e76",
         "field": {
-          "HierarchyLevel": {
+          "Measure": {
             "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "calendario"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Data"
-                  }
-                },
-                "Hierarchy": "Hierarquia de datas"
+              "SourceRef": {
+                "Entity": "_medidas"
               }
             },
-            "Level": "Ano"
+            "Property": "Cotação do Dia"
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "d918b791c29ba9a97632",
+        "name": "29d766710aa8772c3eaf",
         "field": {
-          "HierarchyLevel": {
+          "Measure": {
             "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "calendario"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Data"
-                  }
-                },
-                "Hierarchy": "Hierarquia de datas"
+              "SourceRef": {
+                "Entity": "_medidas"
               }
             },
-            "Level": "Mês"
+            "Property": "Cotação corrigida"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a43234b05aedb78e5177",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_medidas"
+              }
+            },
+            "Property": "Total R$"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3fc2461cab82e1b983f8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "calendario"
+              }
+            },
+            "Property": "Data"
           }
         },
         "type": "Categorical"
-      },
-      {
-        "name": "7e4f68e9885bd67a88e6",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "calendario"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "Data"
-                  }
-                },
-                "Hierarchy": "Hierarquia de datas"
-              }
-            },
-            "Level": "Dia"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
