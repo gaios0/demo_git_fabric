@@ -24,7 +24,7 @@ queryGroup Funcoes
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["base_transacoes","data_inicial","data_final","moedas","calendario","transacoes","getCotacoes","cotacoes"]
+annotation PBI_QueryOrder = ["base_transacoes","data_inicial","data_final","moedas","calendario","transacoes","getCotacoes","cotacoes","_medidas"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -36,6 +36,7 @@ ref table LocalDateTable_006c260f-3018-4f5f-8398-864674500d56
 ref table transacoes
 ref table cotacoes
 ref table LocalDateTable_1079112a-a2d8-48bf-b9c0-eca881a67e92
+ref table _medidas
 
 ref cultureInfo pt-BR
 

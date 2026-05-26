@@ -26,6 +26,7 @@ table transacoes
 
 	column Total
 		dataType: double
+		displayFolder: teste
 		lineageTag: e4a93af5-a584-4fbf-9e1e-e7f78477575c
 		summarizeBy: sum
 		sourceColumn: Total

@@ -1,0 +1,27 @@
+table _medidas
+	lineageTag: 1ea39774-76fc-45a8-93ea-4f71dcd2972d
+
+	measure ValorTotal = SUM(transacoes[Total])
+		lineageTag: 75c306fb-0524-4f97-a17a-88c8e11b21ad
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Coluna 1'
+		dataType: string
+		lineageTag: cf82e77f-0e0f-47ef-a635-9cf925195013
+		summarizeBy: none
+		sourceColumn: Coluna 1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _medidas = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Coluna 1" = _t]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(Fonte,{{"Coluna 1", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+
