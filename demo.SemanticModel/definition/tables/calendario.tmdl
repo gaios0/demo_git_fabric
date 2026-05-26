@@ -1,0 +1,97 @@
+table calendario
+	lineageTag: 2f9d2abe-7edb-43fe-9a93-4fe597c9ae03
+
+	column Data
+		dataType: dateTime
+		formatString: dd/mm/yy
+		lineageTag: 4f745afd-403e-404c-9640-be47f2cc08b6
+		summarizeBy: none
+		sourceColumn: Data
+
+		variation Variation
+			isDefault
+			relationship: 973ea914-b082-442a-af6b-1b765d22727a
+			defaultHierarchy: LocalDateTable_81e01d4d-e063-4fb5-b849-b0462502b045.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Ano
+		dataType: int64
+		formatString: 0
+		lineageTag: d1b4f8cc-e911-4930-b84a-6763e2115868
+		summarizeBy: none
+		sourceColumn: Ano
+
+		annotation SummarizationSetBy = User
+
+	column MesAno
+		dataType: string
+		lineageTag: 89a7335a-5b05-49ed-bb36-9cc264d1b967
+		summarizeBy: none
+		sourceColumn: MesAno
+		sortByColumn: MesInicio
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column MesInicio
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 04817201-4fbf-4250-94fc-e76cb7ac0ce6
+		summarizeBy: none
+		sourceColumn: MesInicio
+
+		variation Variation
+			isDefault
+			relationship: 4e51cdbc-a10d-4793-b08a-dc23ea5ab5de
+			defaultHierarchy: LocalDateTable_006c260f-3018-4f5f-8398-864674500d56.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition calendario = m
+		mode: import
+		queryGroup: Dimensoes
+		source = ```
+				let
+				    dataInicial = data_inicial, 
+				    dataFinal = data_final, 
+				    
+				    datas = List.Dates(
+				        dataInicial, 
+				        Duration.Days(dataFinal-dataInicial) + 1, 
+				        #duration(1, 0, 0, 0)
+				    ),
+				
+				    calendario = #table(
+				        type table[
+				            Data = date,
+				            Ano = Int64.Type,
+				            MesAno = text,
+				            MesInicio = date
+				        ],
+				        List.Transform(
+				            datas,
+				            each {
+				                _,
+				                Date.Year(_),
+				                Date.ToText(_, [Format="MMM/yy", Culture="pt-BR"]),
+				                Date.StartOfMonth(_)
+				            }
+				        )
+				    )
+				
+				in
+				    calendario
+				```
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

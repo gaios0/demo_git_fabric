@@ -1,0 +1,31 @@
+relationship 973ea914-b082-442a-af6b-1b765d22727a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: calendario.Data
+	toColumn: LocalDateTable_81e01d4d-e063-4fb5-b849-b0462502b045.Date
+
+relationship 4e51cdbc-a10d-4793-b08a-dc23ea5ab5de
+	joinOnDateBehavior: datePartOnly
+	fromColumn: calendario.MesInicio
+	toColumn: LocalDateTable_006c260f-3018-4f5f-8398-864674500d56.Date
+
+relationship 5796122e-7127-4462-9f09-701c5ce9d52d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: cotacoes.DataHora
+	toColumn: LocalDateTable_1079112a-a2d8-48bf-b9c0-eca881a67e92.Date
+
+relationship AutoDetected_6a07081e-1532-499c-aa3c-433f49e2bd61
+	fromColumn: transacoes.Moeda
+	toColumn: moedas.Moeda
+
+relationship AutoDetected_41e236ac-86d5-4be9-a91e-53a80e940b08
+	fromColumn: cotacoes.Moeda
+	toColumn: moedas.Moeda
+
+relationship 4cd175b3-a36e-064c-1027-fd085aaa362a
+	fromColumn: cotacoes.Data
+	toColumn: calendario.Data
+
+relationship af6791fe-0fe2-4f4d-3e76-2501cb550189
+	fromColumn: transacoes.Data
+	toColumn: calendario.Data
+
