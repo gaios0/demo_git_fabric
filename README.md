@@ -5,3 +5,5 @@ Criarei um projeto no PowerBI
 Depois farei com fabric
 
 E replicarei com azuredevops
+
+Aula legal
